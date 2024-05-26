@@ -9,7 +9,7 @@ pipeline{
     stage("building application"){
       steps{
         sh """
-        echo "Building Apllication
+        echo "Building Apllication"
          mvn clean package        
         echo "sucessfully Build" 
          
