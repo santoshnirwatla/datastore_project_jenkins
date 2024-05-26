@@ -3,9 +3,9 @@ pipeline{
     stages{
         stage("first stage"){
             steps{
-                sh """
+                sh 
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/santoshnirwatla/datastore_project_jenkins.git']])
-                """
+                
             }
         }
 
