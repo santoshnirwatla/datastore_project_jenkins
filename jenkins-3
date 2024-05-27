@@ -5,6 +5,13 @@ pipeline{
       steps{
         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/santoshnirwatla/datastore_project_jenkins.git']])
       }
-    }  
+    }
+    stage("build apllication"){
+      steps{
+        sh """
+        echo mvn clean package
+        """
+      }
+    }
   }
 }
