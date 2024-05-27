@@ -35,9 +35,9 @@ pipeline{
       steps{
         sh """
         echo "building docker images"
-          chmod 777 'mvnw' 
+          
           docker build -t datastore:"${App_Version}" . 
-        echo"image succesfull build"
+        echo "image succesfull build"
         
         """
       }  
