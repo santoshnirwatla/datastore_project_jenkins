@@ -19,9 +19,13 @@ pipeline{
         echo "excuting testcases"
          mvn test
         echo "testcases successfull"
-        
+
         """
       }
+    }
+    stage("acceptence"){
+      steps{
+        input 'proceed'
     }
   }
 }
