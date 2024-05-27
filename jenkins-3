@@ -1,7 +1,7 @@
 pipeline{
   agent any
   parameters{
-    string(name: "App_Vesrion", description: "provide app version")
+    string(name: "App_Version", description: "provide app version")
   }
   stages{
     stage("first stage"){
