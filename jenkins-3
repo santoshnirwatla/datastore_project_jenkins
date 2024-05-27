@@ -1,5 +1,8 @@
 pipeline{
   agent any
+  parameters{
+    string(name: "App_Vesrion", description: "provide app version")
+  }
   stages{
     stage("first stage"){
       steps{
@@ -27,6 +30,16 @@ pipeline{
       steps{
         input 'proceed'
       }
+    }
+    stage("build docker image"){
+      steps{
+        sh """
+        echo "building docker images"
+          docker build -t datastore:"${App_Version}" . 
+        echo"image succesfull build"
+        
+        """
+      }  
     }
   }
 }
